@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миний Вэб Хуудас</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="main-menu">
+                <li><a href="#home">Нүүр</a></li>
+                <li><a href="#about">Миний тухай</a></li>
+                <li><a href="#skills">Ур чадварууд</a></li>
+                <li><a href="#projects">Төслүүд</a></li>
+                <li><a href="#contact">Холбоо барих</a></li>
+            </ul>
+        </nav>        <div class="nav-right">
+            <button id="darkModeToggle" class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="admin-login">
+                <a href="#" id="adminLoginBtn">Админ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Админ нэвтрэх popup -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Админ нэвтрэх</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username">Нэвтрэх нэр:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Нууц үг:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Нэвтрэх</button>
+            </form>
+        </div>
+    </div>    <main>        <section id="home" class="section">
+            <div class="container">
+                <div class="home-content">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="pro.jpg" alt="Гүнжилмаагийн зураг"> 
+                        </div>
+                        <div class="greeting-text">
+                            <h1 class="welcome-text">Сайн байна уу,</h1>
+                            <h2 class="name-text">Намайг Гүнжилмаа гэдэг</h2>
+                            <p class="motto">✨ "Технологиор дамжуулан амьдралыг хялбарчилъя" ✨</p>
+                        </div>
+                    </div>
+                    <div class="animated-text">
+                        <p>Вэб Хөгжүүлэгч</p>
+                        <p>Програм Хангамжийн Инженер</p>
+                        <p>Шинийг Эрэлхийлэгч</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="cta-button">Төслүүд</a>
+                        <a href="#contact" class="cta-button secondary">Холбоо барих</a>
+                    </div>
+                </div>
+            </div>
+        </section><section id="about" class="section">
+            <div class="container">
+                <h2>💡 Миний тухай</h2>
+                <div id="aboutContent" class="about-content">
+                    <div class="personal-info">
+                        <p class="intro"></p>
+                    </div>
+                    
+                    <div class="education">
+                        <h3>🎓 Боловсрол</h3>
+                        <ul class="timeline"></ul>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3>🏆 Амжилт, туршлага</h3>
+                        <ul class="achievements-list"></ul>
+                    </div>
+                    
+                    <div class="goal">
+                        <p class="future-goal"></p>
+                    </div>
+                </div>
+            </div>
+        </section>        <section id="skills" class="section">
+            <div class="container">
+                <h2>🛠️ Ур чадварууд</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>💻 Техникийн ур чадвар</h3>
+                        <div id="technicalSkills" class="skills-grid">
+                            <!-- Техникийн ур чадваруудыг JavaScript-ээр оруулна -->
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>🎯 Хувийн ур чадвар</h3>
+                        <div id="softSkills" class="skills-grid">
+                            <!-- Хувийн ур чадваруудыг JavaScript-ээр оруулна -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Төслүүд</h2>
+                <div id="projectsContent" class="projects-grid">
+                    <!-- Төслүүдийг JavaScript-ээр оруулна -->
+                </div>
+            </div>
+        </section>        <section id="contact" class="section">
+            <div class="container">
+                <h2>📞 Холбоо барих</h2>
+                <div id="contactContent" class="contact-content">
+                    <div class="contact-info">
+                        <h3>Надтай холбогдох</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>Надад имэйл илгээх:</span>
+                                <a href="mailto:munkhbatgvnjee@gmail.com" id="contactEmail">munkhbatgvnjee@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>Утас:</span>
+                                <span id="contactPhone">+976 8675 0580</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-links">
+                        <h3>Миний сүлжээ</h3>
+                        <div class="social-icons">
+                            <a href="#" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>                            <a href="https://www.instagram.com/gvnjee_0727/" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/share/1AUiKwvMcZ/" target="_blank" class="social-icon">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Миний Вэб Хуудас</h3>
+                    <p class="footer-description">Технологиор дамжуулан амьдралыг хялбарчилъя</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Холбоосууд</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Нүүр</a></li>
+                        <li><a href="#about">Миний тухай</a></li>
+                        <li><a href="#skills">Ур чадварууд</a></li>
+                        <li><a href="#projects">Төслүүд</a></li>
+                        <li><a href="#contact">Холбоо барих</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Холбоо барих</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> munkhbatgvnjee@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +976 8675 0580</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> Миний Вэб Хуудас. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1AUiKwvMcZ/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/gvnjee_0727/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

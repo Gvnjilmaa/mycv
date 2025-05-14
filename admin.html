@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ удирдлага</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <h2>Админ удирдлага</h2>
+            <ul>
+                <li><a href="#" data-section="home">Нүүр хуудас</a></li>
+                <li><a href="#" data-section="about">Миний тухай</a></li>
+                <li><a href="#" data-section="skills">Ур чадварууд</a></li>
+                <li><a href="#" data-section="projects">Төслүүд</a></li>
+                <li><a href="#" data-section="contact">Холбоо барих</a></li>
+                <li><a href="#" id="logoutBtn">Гарах</a></li>
+            </ul>
+        </nav>
+        
+        <main class="admin-main">            <!-- Home Section -->
+            <section id="homeSection" class="admin-section">
+                <h2>Нүүр хуудас</h2>
+                <div class="content-editor">
+                    <h3>Нүүр хуудасны мэдээлэл</h3>
+                    <div class="form-group">
+                        <label for="welcomeText">Мэндчилгээ:</label>
+                        <input type="text" id="welcomeText" value="Сайн байна уу,">
+                    </div>
+                    <div class="form-group">
+                        <label for="nameText">Нэр:</label>
+                        <input type="text" id="nameText" value="Намайг Гүнжилмаа гэдэг">
+                    </div>
+                    <div class="form-group">
+                        <label for="motto">Уриа:</label>
+                        <input type="text" id="motto" value="✨ Технологиор дамжуулан амьдралыг хялбарчилъя ✨">
+                    </div>
+                    <button onclick="saveHomeContent()">Хадгалах</button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="aboutSection" class="admin-section" style="display: none;">
+                <h2>Миний тухай</h2>
+                <div class="content-editor">
+                    <h3>Танилцуулга</h3>
+                    <textarea id="aboutContent" rows="6"></textarea>
+                    <h3>Боловсрол</h3>
+                    <div id="educationList">
+                        <!-- Education items will be loaded here -->
+                    </div>
+                    <button onclick="saveContent('about')">Хадгалах</button>
+                </div>
+            </section>
+
+            <!-- Skills Management Section -->
+            <section id="skillsSection" class="admin-section" style="display: none;">
+                <h2>Ур чадвар</h2>
+                <div class="add-form">
+                    <form id="skillForm">
+                        <div class="form-group">
+                            <label for="skillName">Ур чадварын нэр:</label>
+                            <input type="text" id="skillName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="skillLevel">Түвшин (%):</label>
+                            <input type="number" id="skillLevel" min="0" max="100" required>
+                        </div>
+                        <button type="submit">Нэмэх</button>
+                    </form>
+                </div>
+                <div class="item-list" id="skillsList">
+                    <!-- Skills will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Projects Management Section -->
+            <section id="projectsSection" class="admin-section" style="display: none;">
+                <h2>Төслүүд</h2>
+                <div class="add-form">
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectName">Төслийн нэр:</label>
+                            <input type="text" id="projectName" required>
+                        </div>                        <div class="form-group">
+                            <label for="projectDesc">Тайлбар:</label>
+                            <textarea id="projectDesc" required></textarea>
+                        </div>                        <div class="form-group">
+                            <label for="projectImage">Зургийн URL:</label>
+                            <input type="url" id="projectImage" onchange="showImagePreview(this)">
+                            <div id="imagePreview"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectLink">Холбоос:</label>
+                            <input type="url" id="projectLink">
+                        </div>
+                        <button type="submit">Нэмэх</button>
+                    </form>
+                </div>
+                <div class="item-list" id="projectsList">
+                    <!-- Projects will be loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
