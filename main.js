@@ -53,32 +53,50 @@ function typeWriter(element, text, speed = 100) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize projects if not exists
+    // Technical Skills Data
+    const technicalSkills = [
+        { name: "HTML, CSS, JavaScript", icon: "🌐", level: 90 },
+        { name: "Python, PHP", icon: "🧠", level: 85 },
+        { name: "MySQL, MongoDB", icon: "🗄️", level: 80 }
+    ];
+
+    // Soft Skills Data
+    const softSkills = [
+        { name: "Бусадтай нээлттэй харилцаж чаддаг", icon: "🗣️", level: 90 },
+        { name: "Хувийн зохион байгуулалт сайтай", icon: "📅", level: 85 },
+        { name: "Бүтээлч сэтгэлгээтэй", icon: "🎨", level: 85 },
+        { name: "Суралцах чадвар өндөр", icon: "📚", level: 95 },
+        { name: "Багийн тоглогч байж чаддаг", icon: "🤝", level: 90 }
+    ];    // Initialize projects if not exists
     if (!localStorage.getItem('projects')) {
         const initialProjects = [
             {
-                name: "Онлайн Дэлгүүр",
-                description: "HTML, CSS, JavaScript ашиглан хэрэглэгчид бараа үйлчилгээг сонгож худалдан авах боломжтой онлайн дэлгүүрийн систем. Хэрэглэгчийн сагс, бүтээгдэхүүний хайлт, төлбөр тооцооны интеграци зэрэг үндсэн функцуудыг агуулсан.",
+                name: "Вэб дэлгүүр",
+                description: "HTML, CSS, JavaScript ашиглан хэрэглэгчийн сагс болон төлбөрийн системтэй онлайн худалдааны платформ. Хэрэглэгчид зориулсан хялбар интерфэйс, төлбөрийн систем, бараа бүтээгдэхүүний хайлт болон сагсны системийг хэрэгжүүлсэн.",
                 image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3",
-                link: "#"
+                icon: "🛒",
+                techs: ["HTML", "CSS", "JavaScript"]
             },
             {
-                name: "Илчлэг Тооцоолох Апп",
-                description: "Хоол хүнсний илчлэг болон шим тэжээлийн агууламжийг тооцоолох JavaScript апп. Өдрийн зорилтот илчлэг, уургийн хэрэглээг тооцож, хэрэглэгчид эрүүл хооллолтын зөвлөгөө өгдөг.",
+                name: "Калори тооцоолох апп",
+                description: "Python болон MySQL ашигласан эрүүл мэндийн хэрэгсэл. Хэрэглэгч хоол хүнсний илчлэг тооцоолох, өдрийн хоолны дэглэм гаргах, эрүүл мэндийн зөвлөгөө авах боломжтой апп хөгжүүлсэн.",
                 image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3",
-                link: "#"
+                icon: "🥗",
+                techs: ["Python", "MySQL"]
             },
             {
-                name: "Онлайн Сургалтын Платформ",
-                description: "Багш, сурагчдад зориулсан онлайн сургалтын платформ. Хичээлийн бичлэг, материал, даалгавар зэргийг удирдах систем. Дүн тавих, хичээл зааварчилгаа өгөх боломжтой.",
+                name: "Онлайн сургалтын платформ",
+                description: "PHP, MySQL ашиглан хэрэглэгч бүртгэл, хичээл нэмэх боломжтой онлайн сургалтын платформ. Багш нар хичээл, материал нэмэх, оюутнууд бүртгүүлэх, хичээл үзэх, даалгавар хийх боломжтой цогц систем.",
                 image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3",
-                link: "#"
+                icon: "📚",
+                techs: ["PHP", "MySQL"]
             },
             {
-                name: "Оюутны Вэб Хуудас",
-                description: "Оюутнуудын мэдээлэл солилцох, хичээлийн хуваарь, дүн, материал зэргийг харах боломжтой вэб хуудас. Хэрэглэгчийн эрхийн удирдлага, мэдээллийн сан, хайлтын систем зэрэг үндсэн функцуудтай.",
+                name: "Сурагчийн вэб сайт",
+                description: "PHP, MySQL, HTML/CSS ашиглан сурагч бүр өөрийн хуваарь, дүн, зар мэдээлэл, файл татах боломжтой систем хөгжүүлсэн. Хэрэглэгчийн эрхийн удирдлага, мэдээллийн сангийн бүтэц, хайлтын систем зэрэг чухал функцуудыг амжилттай хэрэгжүүлсэн.",
                 image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3",
-                link: "#"
+                icon: "👩‍🎓",
+                techs: ["PHP", "MySQL", "HTML", "CSS"]
             }
         ];
         localStorage.setItem('projects', JSON.stringify(initialProjects));
@@ -213,7 +231,9 @@ function loadContent() {
             "Мэргэжлийн хичээлийн уралдаан тэмцээнүүд: Топ 3 байрт удаа дараа шалгарсан"
         ],
         goal: "Би ирээдүйд олон улсын түвшний мэргэжилтэн болж, технологийн тусламжтайгаар нийгэмд үнэ цэнтэй хувь нэмэр оруулах зорилготой."
-    };    // Load home content from localStorage
+    };
+
+    // Load home content from localStorage
     const welcomeText = localStorage.getItem('welcomeText');
     const nameText = localStorage.getItem('nameText');
     const motto = localStorage.getItem('motto');
@@ -226,62 +246,90 @@ function loadContent() {
     document.querySelector('#aboutContent .intro').textContent = personalInfo.intro;
     document.querySelector('#aboutContent .timeline').innerHTML = personalInfo.education.map(edu => `<li>${edu}</li>`).join('');
     document.querySelector('#aboutContent .achievements-list').innerHTML = personalInfo.achievements.map(ach => `<li>${ach}</li>`).join('');
-    document.querySelector('#aboutContent .future-goal').textContent = personalInfo.goal;// Load skills
-    const technicalSkills = [
-        { name: 'HTML, CSS, JavaScript', level: 90, icon: '🌐' },
-        { name: 'Python, PHP', level: 85, icon: '🐍' },
-        { name: 'MySQL, MongoDB', level: 80, icon: '💾' },
-        { name: 'React, Vue.js', level: 75, icon: '⚛️' },
-        { name: 'Git, GitHub', level: 85, icon: '📂' },
-        { name: 'Node.js, Express', level: 70, icon: '🚀' }
-    ];
-
-    const softSkills = [
-        { name: 'Бүтээлч сэтгэлгээ', level: 95, icon: '💡' },
-        { name: 'Багаар ажиллах', level: 90, icon: '👥' },
-        { name: 'Асуудал шийдвэрлэх', level: 85, icon: '🎯' },
-        { name: 'Харилцааны ур чадвар', level: 90, icon: '🗣️' },
-        { name: 'Цаг баримтлах', level: 85, icon: '⏰' },
-        { name: 'Шинэ зүйл сурах', level: 95, icon: '📚' }
-    ];
-
+    document.querySelector('#aboutContent .future-goal').textContent = personalInfo.goal;    // Get skill containers
     const technicalSkillsContainer = document.getElementById('technicalSkills');
     const softSkillsContainer = document.getElementById('softSkills');
+}
 
-    function renderSkills() {
-        function createSkillItem(skill) {
-            return `
-                <div class="skill-item">
-                    <div class="skill-icon">${skill.icon}</div>
-                    <div class="skill-info">
-                        <div class="skill-name">${skill.name}</div>
-                        <div class="skill-level-container">
-                            <div class="skill-level">
-                                <div class="skill-level-fill" style="width: ${skill.level}%"></div>
-                            </div>
-                            <span class="skill-percentage">${skill.level}%</span>
-                        </div>
+// Global skills arrays
+const technicalSkills = [
+    { name: 'HTML, CSS, JavaScript', level: 90, icon: '🌐' },
+    { name: 'Python, PHP', level: 85, icon: '🧠' },
+    { name: 'MySQL, MongoDB', level: 80, icon: '🗄️' }
+];
+
+const softSkills = [
+    { name: "Бусадтай нээлттэй харилцаж чаддаг", icon: "🗣️", level: 90 },
+    { name: "Хувийн зохион байгуулалт сайтай", icon: "📅", level: 85 },
+    { name: "Бүтээлч сэтгэлгээтэй", icon: "🎨", level: 85 },
+    { name: "Суралцах чадвар өндөр", icon: "📚", level: 95 },
+    { name: "Багийн тоглогч байж чаддаг", icon: "🤝", level: 90 }
+];
+
+// Render skills in UI
+function renderSkills() {
+     const renderSkillItem = (skill) => `
+            <div class="skill-item">
+                <span class="skill-icon">${skill.icon}</span>
+                <div class="skill-info">
+                    <span class="skill-name">${skill.name}</span>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: ${skill.level}%"></div>
                     </div>
                 </div>
-            `;
+            </div>
+        `;
+
+        // Render technical skills
+        const technicalSkillsContainer = document.getElementById('technicalSkills');
+        if (technicalSkillsContainer) {
+            technicalSkillsContainer.innerHTML = technicalSkills
+                .map(renderSkillItem)
+                .join('');
         }
 
-        technicalSkillsContainer.innerHTML = technicalSkills.map(createSkillItem).join('');
-        softSkillsContainer.innerHTML = softSkills.map(createSkillItem).join('');
+        // Render soft skills
+        const softSkillsContainer = document.getElementById('softSkills');
+        if (softSkillsContainer) {
+            softSkillsContainer.innerHTML = softSkills
+                .map(renderSkillItem)
+                .join('');
+        }
+
+        // Add animation observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            observer.observe(item);
+        });
     }
 
     renderSkills();
-
+    
     // Load projects
     const projects = JSON.parse(localStorage.getItem('projects') || '[]');
     const projectsContainer = document.getElementById('projectsContent');
     projectsContainer.innerHTML = projects.map(project => `
-        <div class="project-item">
-            ${project.image ? `<img src="${project.image}" alt="${project.name}">` : ''}
-            <div class="project-info">
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-icon">${project.icon}</span>
                 <h3>${project.name}</h3>
-                <p>${project.description}</p>
-                ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Дэлгэрэнгүй</a>` : ''}
+            </div>
+            ${project.image ? `<div class="project-image"><img src="${project.image}" alt="${project.name}"></div>` : ''}
+            <div class="project-content">
+                <p class="project-description">${project.description}</p>
+                <div class="project-techs">
+                    ${project.techs.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
             </div>
         </div>
     `).join('');
@@ -289,7 +337,7 @@ function loadContent() {
     // Load contact info
     const contactEmail = localStorage.getItem('contactEmail');
     const contactPhone = localStorage.getItem('contactPhone');
-      if (contactEmail) {
+    if (contactEmail) {
         document.getElementById('contactEmail').textContent = 'munkhbatgvnjee@gmail.com';
         document.getElementById('contactEmail').href = 'mailto:munkhbatgvnjee@gmail.com';
     }
@@ -304,4 +352,3 @@ function loadContent() {
         adminLoginBtn.textContent = 'Удирдлага';
         adminLoginBtn.href = 'admin.html';
     }
-}
