@@ -3,7 +3,7 @@
 <head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Миний Вэб Хуудас</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,13 +16,9 @@
                 <li><a href="#projects">Төслүүд</a></li>
                 <li><a href="#contact">Холбоо барих</a></li>
             </ul>
-        </nav>        <div class="nav-right">
-            <button id="darkModeToggle" class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <div class="admin-login">
-                <a href="#" id="adminLoginBtn">Админ</a>
-            </div>
+        </nav>
+        <div class="admin-login">
+            <a href="#" id="adminLoginBtn">Админ</a>
         </div>
     </header>
 
@@ -48,7 +44,7 @@
                 <div class="home-content">
                     <div class="profile-container">
                         <div class="profile-image">
-                            <img src="pro.jpg" alt="Гүнжилмаагийн зураг"> 
+                            <img src="pro.jpg" alt="Гүнжилмаагийн зураг">
                         </div>
                         <div class="greeting-text">
                             <h1 class="welcome-text">Сайн байна уу,</h1>
@@ -108,16 +104,15 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="projects" class="section">
+        </section>        <section id="projects" class="section">
             <div class="container">
-                <h2>Төслүүд</h2>
+                <h2>🖥️ Миний бүтээлүүд</h2>
+                <p class="section-description">Доорх вэб болон програм хангамжийн төслүүд дээр бие даан болон багаар хамтран ажилласан:</p>
                 <div id="projectsContent" class="projects-grid">
                     <!-- Төслүүдийг JavaScript-ээр оруулна -->
                 </div>
             </div>
-        </section>        <section id="contact" class="section">
+        </section><section id="contact" class="section">
             <div class="container">
                 <h2>📞 Холбоо барих</h2>
                 <div id="contactContent" class="contact-content">
@@ -155,42 +150,14 @@
                 </div>
             </div>
         </section>
-    </main>    <footer>
+    </main>
+
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Миний Вэб Хуудас</h3>
-                    <p class="footer-description">Технологиор дамжуулан амьдралыг хялбарчилъя</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Холбоосууд</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Нүүр</a></li>
-                        <li><a href="#about">Миний тухай</a></li>
-                        <li><a href="#skills">Ур чадварууд</a></li>
-                        <li><a href="#projects">Төслүүд</a></li>
-                        <li><a href="#contact">Холбоо барих</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Холбоо барих</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-envelope"></i> munkhbatgvnjee@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +976 8675 0580</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2025</span> Миний Вэб Хуудас. Бүх эрх хуулиар хамгаалагдсан.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/share/1AUiKwvMcZ/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/gvnjee_0727/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+            <p>&copy; <span id="currentYear">2025</span> Миний Вэб Хуудас. Бүх эрх хуулиар хамгаалагдсан.</p>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
